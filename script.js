@@ -90,12 +90,45 @@ const routeNames = {
   "/mentions-legales": "Mentions légales"
 };
 
+const heroVariants = {
+  default: {
+    kicker: "Boutique en ligne multicatégories",
+    title: "Axiom Store, vos essentiels tech, mode et accessoires",
+    lede:
+      "Trouvez rapidement des produits utiles pour le quotidien et finalisez votre commande en ligne avec un conseiller sur WhatsApp.",
+    cta: "Voir les produits"
+  },
+  direct: {
+    kicker: "Produits utiles, commande simple",
+    title: "Repérez votre produit, Axiom Store confirme sur WhatsApp",
+    lede:
+      "Une sélection claire pour découvrir tech, mode et accessoires, puis échanger directement avant de commander.",
+    cta: "Découvrir la sélection"
+  }
+};
+
 function getRoutePath() {
   return window.location.pathname.replace(/^\/axiom-store/, "") || "/";
 }
 
 function goHome() {
   window.location.href = "./";
+}
+
+function applyHeroVariant() {
+  const params = new URLSearchParams(window.location.search);
+  const variant = heroVariants[params.get("hero")] || heroVariants.default;
+  const kicker = document.querySelector("[data-hero-kicker]");
+  const title = document.querySelector("[data-hero-title]");
+  const lede = document.querySelector("[data-hero-lede]");
+  const cta = document.querySelector("[data-hero-cta]");
+
+  if (!kicker || !title || !lede || !cta) return;
+
+  kicker.textContent = variant.kicker;
+  title.textContent = variant.title;
+  lede.textContent = variant.lede;
+  cta.textContent = variant.cta;
 }
 
 function renderProducts(items) {
@@ -172,3 +205,4 @@ searchForms.forEach((form) => {
 
 renderProducts(products);
 showCurrentRoute();
+applyHeroVariant();
