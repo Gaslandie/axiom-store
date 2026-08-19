@@ -90,6 +90,14 @@ const routeNames = {
   "/mentions-legales": "Mentions légales"
 };
 
+function getRoutePath() {
+  return window.location.pathname.replace(/^\/axiom-store/, "") || "/";
+}
+
+function goHome() {
+  window.location.href = "./";
+}
+
 function renderProducts(items) {
   grid.innerHTML = items
     .map(
@@ -117,12 +125,13 @@ function renderProducts(items) {
 }
 
 function showCurrentRoute() {
-  const isHome = window.location.pathname === "/";
+  const routePath = getRoutePath();
+  const isHome = routePath === "/" || routePath === "/index.html" || routePath === "/404.html";
   homePage.hidden = !isHome;
   constructionPage.hidden = isHome;
 
   if (!isHome) {
-    const label = routeNames[window.location.pathname] || "Section";
+    const label = routeNames[routePath] || "Section";
     routeLabel.textContent = label;
     document.title = `${label} en construction | Axiom Store`;
   }
@@ -141,8 +150,8 @@ searchForms.forEach((form) => {
     const input = form.querySelector("input");
     const term = input.value.trim().toLowerCase();
 
-    if (window.location.pathname !== "/") {
-      window.location.href = "/";
+    if (getRoutePath() !== "/") {
+      goHome();
       return;
     }
 
