@@ -444,14 +444,14 @@ h3 {
 .hero-showcase {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  grid-template-rows: repeat(2, minmax(170px, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: 14px;
-  min-height: 380px;
+  height: clamp(260px, 24vw, 330px);
 }
 
 .showcase-card {
   position: relative;
-  min-height: 170px;
+  min-height: 0;
   overflow: hidden;
   background: var(--surface);
   border-radius: var(--radius);
@@ -963,6 +963,7 @@ h3 {
   .hero-showcase {
     grid-template-columns: 1fr;
     grid-template-rows: none;
+    height: auto;
     min-height: auto;
   }
 
