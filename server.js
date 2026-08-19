@@ -23,8 +23,11 @@ const server = http.createServer((req, res) => {
   const safePath = path.normalize(decodeURIComponent(url.pathname)).replace(/^(\.\.[/\\])+/, "");
   let filePath = path.join(root, safePath);
 
-  if (url.pathname === "/" || !path.extname(filePath)) {
+  if (url.pathname === "/") {
     filePath = path.join(root, "index.html");
+  } else if (!path.extname(filePath)) {
+    const routeIndex = path.join(filePath, "index.html");
+    filePath = fs.existsSync(routeIndex) ? routeIndex : path.join(root, "index.html");
   }
 
   fs.readFile(filePath, (error, data) => {
