@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Maquette homepage Axiom Store, boutique multicatégories avec commande via WhatsApp."
+    />
+    <title>Axiom Store | Boutique multicatégories</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+
+    <header class="site-header">
+      <div class="top-strip">
+        <p>Commande et conseil directement sur WhatsApp</p>
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+      </div>
+
+      <div class="header-main">
+        <a class="brand" href="/" aria-label="Axiom Store - accueil">
+          <span class="brand-mark">A</span>
+          <span>
+            <strong>Axiom Store</strong>
+            <small>Multicatégories</small>
+          </span>
+        </a>
+
+        <form class="search-form" role="search" aria-label="Recherche produit">
+          <label class="sr-only" for="site-search">Rechercher un produit</label>
+          <input id="site-search" type="search" placeholder="Chercher un produit, une marque, une catégorie" />
+          <button type="submit" aria-label="Lancer la recherche">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="m21 21-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" />
+            </svg>
+          </button>
+        </form>
+
+        <nav class="desktop-nav" aria-label="Navigation principale">
+          <a href="/boutique">Boutique</a>
+          <a href="/categories">Catégories</a>
+          <a href="/services">Services</a>
+          <a href="/contact">Contact</a>
+        </nav>
+
+        <a class="whatsapp-link" href="https://wa.me/224000000000" target="_blank" rel="noreferrer">
+          WhatsApp
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="category-rail" aria-label="Univers produits">
+        <a href="/categories">Électronique</a>
+        <a href="/categories">Accessoires</a>
+        <a href="/categories">Mode</a>
+        <a href="/categories">Nouveautés</a>
+        <a href="/services">Services</a>
+        <a href="/categories">Promos</a>
+      </div>
+
+      <form class="mobile-inline-search" role="search" aria-label="Recherche mobile rapide">
+        <label class="sr-only" for="mobile-inline-search">Rechercher un produit</label>
+        <input id="mobile-inline-search" type="search" placeholder="Chercher un produit" />
+        <button type="submit" aria-label="Lancer la recherche mobile">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m21 21-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" />
+          </svg>
+        </button>
+      </form>
+
+      <div class="mobile-panel" hidden>
+        <form class="mobile-search" role="search" aria-label="Recherche mobile">
+          <label class="sr-only" for="mobile-search">Rechercher un produit</label>
+          <input id="mobile-search" type="search" placeholder="Rechercher sur Axiom Store" />
+        </form>
+        <a href="/boutique">Boutique</a>
+        <a href="/categories">Catégories</a>
+        <a href="/services">Services</a>
+        <a href="/about">À propos</a>
+        <a href="/contact">Contact</a>
+        <a class="mobile-whatsapp" href="https://wa.me/224000000000" target="_blank" rel="noreferrer">
+          Commander via WhatsApp
+        </a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="home-page">
+        <section class="hero-section" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">Boutique multicatégories</p>
+            <h1 id="hero-title">Axiom Store</h1>
+            <p class="hero-lede">
+              Découvrez une sélection claire de produits tech, mode, accessoires et services, puis finalisez
+              simplement votre commande avec un conseiller sur WhatsApp.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#featured-products">Voir les produits</a>
+              <a class="button secondary" href="https://wa.me/224000000000" target="_blank" rel="noreferrer">
+                Commander sur WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-showcase" aria-label="Sélection de produits Axiom Store">
+            <article class="showcase-card showcase-large">
+              <img
+                src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=820&q=82"
+                alt="Ordinateur portable posé sur un bureau"
+              />
+              <div>
+                <span>Nouveauté</span>
+                <strong>Équipement connecté</strong>
+              </div>
+            </article>
+            <article class="showcase-card">
+              <img
+                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=520&q=82"
+                alt="T-shirts pliés dans une boutique"
+              />
+              <div>
+                <span>Mode</span>
+                <strong>Essentiels du quotidien</strong>
+              </div>
+            </article>
+            <article class="showcase-card">
+              <img
+                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=520&q=82"
+                alt="Casque audio noir"
+              />
+              <div>
+                <span>Accessoires</span>
+                <strong>Son et mobilité</strong>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="quick-trust" aria-label="Informations utiles">
+          <div>
+            <strong>Catalogue varié</strong>
+            <span>Tech, mode, accessoires et services</span>
+          </div>
+          <div>
+            <strong>Conseil direct</strong>
+            <span>Questions et commandes via WhatsApp</span>
+          </div>
+          <div>
+            <strong>Nouveautés régulières</strong>
+            <span>Sélection pensée pour évoluer facilement</span>
+          </div>
+        </section>
+
+        <section class="section categories-section" aria-labelledby="categories-title">
+          <div class="section-heading">
+            <p class="eyebrow">Univers populaires</p>
+            <h2 id="categories-title">Trouvez vite le bon rayon</h2>
+            <a href="/categories">Toutes les catégories</a>
+          </div>
+
+          <div class="category-grid">
+            <a class="category-tile tall" href="/categories">
+              <img
+                src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=680&q=82"
+                alt="Ordinateur portable ouvert sur un espace de travail"
+              />
+              <span>Électronique</span>
+            </a>
+            <a class="category-tile" href="/categories">
+              <img
+                src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=680&q=82"
+                alt="Casque audio moderne"
+              />
+              <span>Accessoires</span>
+            </a>
+            <a class="category-tile" href="/categories">
+              <img
+                src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=680&q=82"
+                alt="Portant de vêtements"
+              />
+              <span>Mode</span>
+            </a>
+            <a class="category-tile" href="/services">
+              <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=680&q=82"
+                alt="Personnes préparant un service client"
+              />
+              <span>Services</span>
+            </a>
+            <a class="category-tile wide" href="/categories">
+              <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=980&q=82"
+                alt="Paire de baskets colorées"
+              />
+              <span>Nouveautés et tendances</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="section products-section" id="featured-products" aria-labelledby="products-title">
+          <div class="section-heading">
+            <p class="eyebrow">Sélection Axiom</p>
+            <h2 id="products-title">Produits mis en avant</h2>
+            <a href="/boutique">Voir la boutique</a>
+          </div>
+
+          <div class="product-grid" data-product-grid></div>
+        </section>
+
+        <section class="editorial-band" aria-labelledby="promo-title">
+          <div>
+            <p class="eyebrow">À découvrir</p>
+            <h2 id="promo-title">Une home pensée comme un vrai catalogue</h2>
+            <p>
+              Les produits changent, les univers restent lisibles. Axiom Store peut mettre en avant une collection,
+              une promotion ou une nouvelle arrivée sans brouiller l’expérience d’achat.
+            </p>
+            <a class="button light" href="/categories">Explorer les univers</a>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1100&q=82"
+            alt="Panier de commande avec plusieurs articles"
+          />
+        </section>
+
+        <section class="section trends-section" aria-labelledby="trends-title">
+          <div class="section-heading">
+            <p class="eyebrow">Rythme commercial</p>
+            <h2 id="trends-title">Nouveautés, tendances et bons plans</h2>
+          </div>
+          <div class="trend-grid">
+            <article>
+              <span>Nouveautés</span>
+              <h3>Produits fraîchement ajoutés</h3>
+              <p>Une zone flexible pour renouveler rapidement la vitrine sans refaire toute la page.</p>
+              <a href="/boutique">Voir les nouveautés</a>
+            </article>
+            <article>
+              <span>Promos</span>
+              <h3>Offres à suivre</h3>
+              <p>Des promotions de démonstration, sans promesse commerciale non confirmée.</p>
+              <a href="/boutique">Voir les promos</a>
+            </article>
+            <article>
+              <span>Conseil</span>
+              <h3>Aide au choix</h3>
+              <p>Un contact direct pour valider le bon produit avant de commander sur WhatsApp.</p>
+              <a href="https://wa.me/224000000000" target="_blank" rel="noreferrer">Demander conseil</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section services-section" aria-labelledby="services-title">
+          <div class="section-heading">
+            <p class="eyebrow">Services</p>
+            <h2 id="services-title">Plus qu’une boutique</h2>
+            <a href="/services">Page services</a>
+          </div>
+          <div class="service-list">
+            <article>
+              <h3>Recherche de produit</h3>
+              <p>Besoin d’un modèle précis ? Axiom Store peut orienter la demande vers WhatsApp.</p>
+            </article>
+            <article>
+              <h3>Conseil avant achat</h3>
+              <p>Un échange rapide aide le client à confirmer la référence ou l’accessoire adapté.</p>
+            </article>
+            <article>
+              <h3>Demandes spéciales</h3>
+              <p>La page d’accueil laisse la place aux services sans les mélanger aux fiches produits.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="whatsapp-section" aria-labelledby="order-title">
+          <div>
+            <p class="eyebrow">Commande simple</p>
+            <h2 id="order-title">Choisissez, écrivez, confirmez</h2>
+            <p>
+              La maquette ne simule aucun paiement en ligne. Le parcours guide clairement vers WhatsApp pour finaliser
+              la disponibilité, les détails et la commande.
+            </p>
+          </div>
+          <ol>
+            <li><strong>1</strong><span>Repérez un produit</span></li>
+            <li><strong>2</strong><span>Contactez Axiom Store</span></li>
+            <li><strong>3</strong><span>Confirmez sur WhatsApp</span></li>
+          </ol>
+          <a class="button primary" href="https://wa.me/224000000000" target="_blank" rel="noreferrer">
+            Ouvrir WhatsApp
+          </a>
+        </section>
+      </section>
+
+      <section class="construction-page" hidden>
+        <div class="construction-shell">
+          <p class="eyebrow">Axiom Store · <span data-route-label>Section</span></p>
+          <h1>Page en cours de construction</h1>
+          <p>
+            Cette section sera bientôt disponible. La maquette actuelle présente en priorité la page d’accueil
+            d’Axiom Store.
+          </p>
+          <a class="button primary" href="/">Retour à l’accueil</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="/">
+          <span class="brand-mark">A</span>
+          <span>
+            <strong>Axiom Store</strong>
+            <small>Commande via WhatsApp</small>
+          </span>
+        </a>
+        <p>Une direction e-commerce claire pour présenter produits, services et contact sans paiement en ligne.</p>
+      </div>
+      <nav aria-label="Liens footer">
+        <strong>Navigation</strong>
+        <a href="/boutique">Boutique</a>
+        <a href="/categories">Catégories</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <nav aria-label="Catégories footer">
+        <strong>Catégories</strong>
+        <a href="/categories">Électronique</a>
+        <a href="/categories">Accessoires</a>
+        <a href="/categories">Mode</a>
+        <a href="/categories">Produits divers</a>
+      </nav>
+      <nav aria-label="Contact footer">
+        <strong>Contact</strong>
+        <a href="https://wa.me/224000000000" target="_blank" rel="noreferrer">WhatsApp</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="/mentions-legales">Mentions légales</a>
+      </nav>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
