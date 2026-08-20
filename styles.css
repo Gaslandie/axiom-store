@@ -816,6 +816,180 @@ h3 {
   border-radius: 50%;
 }
 
+.shop-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+  gap: 24px;
+  align-items: end;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(42px, 6vw, 72px) var(--page-x) 34px;
+  background: linear-gradient(180deg, var(--surface) 0, var(--surface) 62%, var(--white) 62%);
+}
+
+.shop-hero h1 {
+  margin-bottom: 12px;
+  font-size: clamp(3rem, 7vw, 5.6rem);
+}
+
+.shop-hero p {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: #40525d;
+  font-size: 1.06rem;
+}
+
+.shop-hero-panel {
+  padding: 22px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.shop-hero-panel strong,
+.shop-hero-panel span {
+  display: block;
+}
+
+.shop-hero-panel span {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.shop-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 34px var(--page-x) 84px;
+}
+
+.shop-sidebar {
+  position: sticky;
+  top: 150px;
+  display: grid;
+  gap: 16px;
+}
+
+.filter-block {
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.filter-block h2 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.filter-block p {
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.filter-block .button {
+  width: 100%;
+}
+
+.filter-list {
+  display: grid;
+  gap: 8px;
+}
+
+.filter-list button {
+  min-height: 40px;
+  padding: 0 12px;
+  color: #31424c;
+  text-align: left;
+  cursor: pointer;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-weight: 800;
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.filter-list button:hover,
+.filter-list button.active {
+  color: var(--white);
+  background: var(--brand);
+  border-color: var(--brand);
+}
+
+.shop-results {
+  min-width: 0;
+}
+
+.shop-toolbar {
+  display: flex;
+  gap: 18px;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.shop-toolbar h2 {
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+}
+
+.shop-toolbar [data-result-count] {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-weight: 750;
+}
+
+.shop-toolbar label {
+  display: grid;
+  gap: 6px;
+  min-width: 190px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 850;
+}
+
+.shop-toolbar select {
+  min-height: 42px;
+  padding: 0 12px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.shop-product-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.shop-product-grid .product-card {
+  grid-template-rows: 188px 1fr;
+}
+
+.empty-state {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+}
+
+.empty-state h3 {
+  margin-bottom: 4px;
+}
+
+.empty-state p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
 .construction-page {
   min-height: 68vh;
   padding: 80px var(--page-x);
@@ -885,7 +1059,8 @@ h3 {
   }
 
   .hero-section,
-  .editorial-band {
+  .editorial-band,
+  .shop-hero {
     grid-template-columns: 1fr;
   }
 
@@ -895,6 +1070,15 @@ h3 {
 
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shop-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-sidebar {
+    position: static;
+    grid-template-columns: 1fr 1fr;
   }
 
   .whatsapp-section {
@@ -951,6 +1135,10 @@ h3 {
     padding: 28px 16px 34px;
   }
 
+  .shop-hero {
+    padding: 34px 16px 24px;
+  }
+
   h1 {
     font-size: clamp(3rem, 17vw, 4.25rem);
   }
@@ -982,6 +1170,23 @@ h3 {
 
   .section {
     padding: 56px 16px;
+  }
+
+  .shop-layout {
+    padding: 28px 16px 58px;
+  }
+
+  .shop-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-toolbar {
+    display: grid;
+    align-items: start;
+  }
+
+  .shop-toolbar label {
+    min-width: 0;
   }
 
   .section-heading {

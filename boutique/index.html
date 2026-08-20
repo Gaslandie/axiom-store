@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boutique en construction | Axiom Store</title>
+    <meta
+      name="description"
+      content="Boutique Axiom Store : produits tech, mode, accessoires et nouveautés avec commande via WhatsApp."
+    />
+    <title>Boutique | Axiom Store</title>
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#shop-main">Aller au contenu</a>
+
     <header class="site-header">
       <div class="top-strip">
         <p>Commande et conseil directement sur WhatsApp</p>
@@ -17,10 +23,13 @@
           <span class="brand-mark">A</span>
           <span><strong>Axiom Store</strong><small>Multicatégories</small></span>
         </a>
-        <form class="search-form" role="search" aria-label="Recherche produit">
-          <input type="search" placeholder="Chercher un produit, une marque, une catégorie" />
+        <form class="search-form" role="search" aria-label="Recherche produit" data-shop-search>
+          <label class="sr-only" for="shop-header-search">Rechercher un produit</label>
+          <input id="shop-header-search" type="search" placeholder="Chercher un produit, une marque, une catégorie" />
           <button type="submit" aria-label="Lancer la recherche">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" /></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="m21 21-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" />
+            </svg>
           </button>
         </form>
         <nav class="desktop-nav" aria-label="Navigation principale">
@@ -30,6 +39,11 @@
           <a href="../contact/">Contact</a>
         </nav>
         <a class="whatsapp-link" href="https://wa.me/224000000000" target="_blank" rel="noreferrer">WhatsApp</a>
+        <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
       <div class="category-rail" aria-label="Univers produits">
         <a href="../categories/">Électronique</a>
@@ -39,25 +53,114 @@
         <a href="../services/">Services</a>
         <a href="../categories/">Promos</a>
       </div>
+      <form class="mobile-inline-search" role="search" aria-label="Recherche mobile rapide" data-shop-search>
+        <label class="sr-only" for="shop-mobile-search">Rechercher un produit</label>
+        <input id="shop-mobile-search" type="search" placeholder="Chercher un produit" />
+        <button type="submit" aria-label="Lancer la recherche mobile">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m21 21-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" />
+          </svg>
+        </button>
+      </form>
+      <div class="mobile-panel" hidden data-mobile-panel>
+        <a href="../boutique/">Boutique</a>
+        <a href="../categories/">Catégories</a>
+        <a href="../services/">Services</a>
+        <a href="../about/">À propos</a>
+        <a href="../contact/">Contact</a>
+        <a class="mobile-whatsapp" href="https://wa.me/224000000000" target="_blank" rel="noreferrer">
+          Commander via WhatsApp
+        </a>
+      </div>
     </header>
 
-    <main class="construction-page">
-      <div class="construction-shell">
-        <p class="eyebrow">Axiom Store · Boutique</p>
-        <h1>Page en cours de construction</h1>
-        <p>Cette section sera bientôt disponible. La maquette actuelle présente en priorité la page d’accueil d’Axiom Store.</p>
-        <a class="button primary" href="../">Retour à l’accueil</a>
-      </div>
+    <main id="shop-main">
+      <section class="shop-hero" aria-labelledby="shop-title">
+        <div>
+          <p class="eyebrow">Catalogue Axiom Store</p>
+          <h1 id="shop-title">Boutique</h1>
+          <p>
+            Parcourez les produits disponibles en démonstration, filtrez par univers, puis contactez Axiom Store sur
+            WhatsApp pour confirmer la commande.
+          </p>
+        </div>
+        <div class="shop-hero-panel" aria-label="Informations commande">
+          <strong>Commande sans paiement en ligne</strong>
+          <span>Choisissez un produit, envoyez la référence sur WhatsApp, puis confirmez les détails avec un conseiller.</span>
+        </div>
+      </section>
+
+      <section class="shop-layout" aria-labelledby="catalog-title">
+        <aside class="shop-sidebar" aria-label="Filtres boutique">
+          <div class="filter-block">
+            <h2>Catégories</h2>
+            <div class="filter-list" data-category-filters></div>
+          </div>
+          <div class="filter-block">
+            <h2>Commande</h2>
+            <p>Les prix sont affichés en GNF. La finalisation se fait uniquement via WhatsApp.</p>
+            <a class="button primary" href="https://wa.me/224000000000" target="_blank" rel="noreferrer">
+              WhatsApp
+            </a>
+          </div>
+        </aside>
+
+        <section class="shop-results" aria-labelledby="catalog-title">
+          <div class="shop-toolbar">
+            <div>
+              <p class="eyebrow">Produits</p>
+              <h2 id="catalog-title">Catalogue</h2>
+              <span data-result-count></span>
+            </div>
+            <label>
+              <span>Trier</span>
+              <select data-sort-products>
+                <option value="featured">Mise en avant</option>
+                <option value="price-asc">Prix croissant</option>
+                <option value="price-desc">Prix décroissant</option>
+                <option value="name">Nom A-Z</option>
+              </select>
+            </label>
+          </div>
+          <div class="product-grid shop-product-grid" data-shop-grid></div>
+          <div class="empty-state" hidden data-empty-state>
+            <h3>Aucun produit trouvé</h3>
+            <p>Essayez une autre recherche ou sélectionnez toutes les catégories.</p>
+          </div>
+        </section>
+      </section>
     </main>
 
     <footer class="site-footer">
       <div>
-        <a class="brand footer-brand" href="../"><span class="brand-mark">A</span><span><strong>Axiom Store</strong><small>Commande via WhatsApp</small></span></a>
+        <a class="brand footer-brand" href="../">
+          <span class="brand-mark">A</span>
+          <span><strong>Axiom Store</strong><small>Commande via WhatsApp</small></span>
+        </a>
         <p>Une direction e-commerce claire pour présenter produits, services et contact sans paiement en ligne.</p>
       </div>
-      <nav><strong>Navigation</strong><a href="../boutique/">Boutique</a><a href="../categories/">Catégories</a><a href="../services/">Services</a><a href="../contact/">Contact</a></nav>
-      <nav><strong>Catégories</strong><a href="../categories/">Électronique</a><a href="../categories/">Accessoires</a><a href="../categories/">Mode</a><a href="../categories/">Produits divers</a></nav>
-      <nav><strong>Contact</strong><a href="https://wa.me/224000000000" target="_blank" rel="noreferrer">WhatsApp</a><a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a><a href="../mentions-legales/">Mentions légales</a></nav>
+      <nav aria-label="Liens footer">
+        <strong>Navigation</strong>
+        <a href="../boutique/">Boutique</a>
+        <a href="../categories/">Catégories</a>
+        <a href="../services/">Services</a>
+        <a href="../contact/">Contact</a>
+      </nav>
+      <nav aria-label="Catégories footer">
+        <strong>Catégories</strong>
+        <a href="../categories/">Électronique</a>
+        <a href="../categories/">Accessoires</a>
+        <a href="../categories/">Mode</a>
+        <a href="../categories/">Produits divers</a>
+      </nav>
+      <nav aria-label="Contact footer">
+        <strong>Contact</strong>
+        <a href="https://wa.me/224000000000" target="_blank" rel="noreferrer">WhatsApp</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="../mentions-legales/">Mentions légales</a>
+      </nav>
     </footer>
+
+    <script src="../shop.js"></script>
   </body>
 </html>
