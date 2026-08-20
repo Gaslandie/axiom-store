@@ -147,8 +147,8 @@ function renderProducts(items) {
               <span class="price">${product.price}</span>
               ${product.oldPrice ? `<span class="old-price">${product.oldPrice}</span>` : ""}
             </div>
-            <a class="button secondary" href="https://wa.me/224000000000" target="_blank" rel="noreferrer">
-              Commander
+            <a class="button secondary" href="boutique/?q=${encodeURIComponent(product.name)}">
+              Voir en boutique
             </a>
           </div>
         </article>

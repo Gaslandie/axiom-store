@@ -31,10 +31,11 @@ if (contactForm) {
       "Bonjour Axiom Store,",
       `Nom : ${data.get("name") || ""}`,
       `Téléphone : ${data.get("phone") || ""}`,
+      `Ville : ${data.get("city") || ""}`,
       `Besoin : ${data.get("need") || ""}`,
       `Message : ${data.get("message") || ""}`
     ].join("\n");
 
-    window.open(`https://wa.me/224000000000?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/224620343586?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   });
 }

@@ -38,7 +38,11 @@
           <a href="../services/">Services</a>
           <a href="../contact/">Contact</a>
         </nav>
-        <a class="whatsapp-link" href="https://wa.me/224000000000" target="_blank" rel="noreferrer">WhatsApp</a>
+        <button class="cart-toggle" type="button" aria-label="Ouvrir le panier" aria-expanded="false" data-cart-toggle>
+          <span>Panier</span>
+          <strong data-cart-count>0</strong>
+        </button>
+        <a class="whatsapp-link" href="https://wa.me/224620343586" target="_blank" rel="noreferrer">WhatsApp</a>
         <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>
           <span></span>
           <span></span>
@@ -68,7 +72,10 @@
         <a href="../services/">Services</a>
         <a href="../about/">À propos</a>
         <a href="../contact/">Contact</a>
-        <a class="mobile-whatsapp" href="https://wa.me/224000000000" target="_blank" rel="noreferrer">
+        <button class="mobile-cart-button" type="button" data-cart-toggle>
+          Voir le panier <strong data-cart-count>0</strong>
+        </button>
+        <a class="mobile-whatsapp" href="https://wa.me/224620343586" target="_blank" rel="noreferrer">
           Commander via WhatsApp
         </a>
       </div>
@@ -80,13 +87,13 @@
           <p class="eyebrow">Catalogue Axiom Store</p>
           <h1 id="shop-title">Boutique</h1>
           <p>
-            Parcourez les produits disponibles en démonstration, filtrez par univers, puis contactez Axiom Store sur
-            WhatsApp pour confirmer la commande.
+            Parcourez les produits disponibles, ajoutez plusieurs articles au panier, puis envoyez une seule demande
+            complète sur WhatsApp.
           </p>
         </div>
         <div class="shop-hero-panel" aria-label="Informations commande">
-          <strong>Commande sans paiement en ligne</strong>
-          <span>Choisissez un produit, envoyez la référence sur WhatsApp, puis confirmez les détails avec un conseiller.</span>
+          <strong>Panier puis WhatsApp</strong>
+          <span>Ajoutez plusieurs produits au panier, puis envoyez une seule demande complète au vendeur.</span>
         </div>
       </section>
 
@@ -98,10 +105,8 @@
           </div>
           <div class="filter-block">
             <h2>Commande</h2>
-            <p>Les prix sont affichés en GNF. La finalisation se fait uniquement via WhatsApp.</p>
-            <a class="button primary" href="https://wa.me/224000000000" target="_blank" rel="noreferrer">
-              WhatsApp
-            </a>
+            <p>Ajoutez vos produits au panier. Le message WhatsApp contiendra le détail, les quantités et le total.</p>
+            <button class="button primary" type="button" data-cart-toggle>Voir le panier</button>
           </div>
         </aside>
 
@@ -131,6 +136,35 @@
       </section>
     </main>
 
+    <div class="cart-backdrop" hidden data-cart-backdrop></div>
+    <aside class="cart-drawer" hidden data-cart-drawer role="dialog" aria-modal="true" aria-labelledby="cart-title">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">Commande WhatsApp</p>
+          <h2 id="cart-title">Panier</h2>
+        </div>
+        <button type="button" class="cart-close" data-cart-close>Fermer</button>
+      </div>
+
+      <div class="cart-items" data-cart-items></div>
+      <div class="cart-empty" data-cart-empty>
+        <h3>Votre panier est vide</h3>
+        <p>Ajoutez un ou plusieurs produits avant de préparer la commande WhatsApp.</p>
+      </div>
+
+      <div class="cart-summary" data-cart-summary hidden>
+        <div class="cart-total-row">
+          <span>Total estimatif</span>
+          <strong data-cart-total>0 GNF</strong>
+        </div>
+        <a class="button primary cart-whatsapp" href="https://wa.me/224620343586" target="_blank" rel="noreferrer" data-cart-whatsapp>
+          Commander via WhatsApp
+        </a>
+        <button class="button secondary" type="button" data-cart-clear>Vider le panier</button>
+      </div>
+    </aside>
+    <div class="cart-toast" hidden data-cart-toast aria-live="polite">Produit ajouté au panier</div>
+
     <footer class="site-footer">
       <div>
         <a class="brand footer-brand" href="../">
@@ -155,8 +189,9 @@
       </nav>
       <nav aria-label="Contact footer">
         <strong>Contact</strong>
-        <a href="https://wa.me/224000000000" target="_blank" rel="noreferrer">WhatsApp</a>
+        <a href="https://wa.me/224620343586" target="_blank" rel="noreferrer">WhatsApp</a>
         <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="mailto:axiomstoregn@gmail.com">Email</a>
         <a href="../mentions-legales/">Mentions légales</a>
       </nav>
     </footer>
