@@ -219,6 +219,10 @@ function getCartCount() {
   return cart.reduce((total, item) => total + item.quantity, 0);
 }
 
+function getCartQuantity(productId) {
+  return cart.find((item) => item.id === productId)?.quantity || 0;
+}
+
 function getCartTotal() {
   return getCartItems().reduce((total, item) => total + item.product.price * item.quantity, 0);
 }
@@ -258,12 +262,18 @@ function renderProducts() {
   emptyState.hidden = items.length > 0;
 
   grid.innerHTML = items
-    .map(
-      (product) => `
-        <article class="product-card">
+    .map((product) => {
+      const cartQuantity = getCartQuantity(product.id);
+      return `
+        <article class="product-card ${cartQuantity ? "in-cart" : ""}">
           <div class="product-image">
             <img src="${product.image}" alt="${product.alt}" loading="lazy" decoding="async">
             ${product.badge ? `<span class="badge">${product.badge}</span>` : ""}
+            ${
+              cartQuantity
+                ? `<span class="cart-product-pill">Dans le panier · ${cartQuantity}</span>`
+                : ""
+            }
           </div>
           <div class="product-body">
             <span class="product-category">${product.category}</span>
@@ -272,13 +282,13 @@ function renderProducts() {
               <span class="price">${formatPrice(product.price)}</span>
               ${product.oldPrice ? `<span class="old-price">${formatPrice(product.oldPrice)}</span>` : ""}
             </div>
-            <button class="button secondary" type="button" data-add-to-cart="${product.id}">
-              Ajouter au panier
+            <button class="button secondary ${cartQuantity ? "cart-added-button" : ""}" type="button" data-add-to-cart="${product.id}">
+              ${cartQuantity ? `Ajouter encore · ${cartQuantity}` : "Ajouter au panier"}
             </button>
           </div>
         </article>
-      `
-    )
+      `;
+    })
     .join("");
 }
 
@@ -368,6 +378,7 @@ function addToCart(productId) {
 
   saveCart();
   renderCart();
+  renderProducts();
   showToast(`${product.name} ajouté au panier`);
 }
 
@@ -377,6 +388,7 @@ function updateCartQuantity(productId, quantity) {
     .filter((item) => item.quantity > 0);
   saveCart();
   renderCart();
+  renderProducts();
 }
 
 function openCart() {
@@ -440,6 +452,7 @@ cartClear.addEventListener("click", () => {
   cart = [];
   saveCart();
   renderCart();
+  renderProducts();
 });
 
 searchForms.forEach((form) => {
