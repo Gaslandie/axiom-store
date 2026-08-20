@@ -125,6 +125,13 @@ const searchForms = document.querySelectorAll("[data-shop-search]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobilePanel = document.querySelector("[data-mobile-panel]");
 
+const params = new URLSearchParams(window.location.search);
+const initialQuery = params.get("q");
+const initialCategory = params.get("category");
+
+if (initialQuery) state.query = initialQuery.trim();
+if (initialCategory) state.category = initialCategory;
+
 function formatPrice(value) {
   return `${formatter.format(value)} GNF`;
 }
@@ -138,6 +145,8 @@ function getCategories() {
 }
 
 function getFilteredProducts() {
+  if (!getCategories().includes(state.category)) state.category = "Tous";
+
   const query = normalize(state.query);
   let items = shopProducts.filter((product) => {
     const matchesCategory = state.category === "Tous" || product.category === state.category;
@@ -198,6 +207,11 @@ function updateShop() {
   renderFilters();
   renderProducts();
 }
+
+searchForms.forEach((form) => {
+  const input = form.querySelector("input");
+  if (input) input.value = state.query;
+});
 
 categoryFilters.addEventListener("click", (event) => {
   const button = event.target.closest("[data-category]");
